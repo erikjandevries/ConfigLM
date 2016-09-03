@@ -100,7 +100,7 @@ The scripts will perform the following installation and configuration:
 
 ### Machine Learning and Development
 
-* Atom (Code editor)
+* [Atom](https://atom.io/) (Code editor)
 * Python 2.7
   * Build essentials, developer tools, setup tools
   * Pip (incl. SSL for Pip)
@@ -115,6 +115,7 @@ The scripts will perform the following installation and configuration:
       * nltk
       * scikit-learn
       * matplotlib
-      * Theano
-      * Lasagne
+      * [Theano](http://deeplearning.net/software/theano/)
+      * [Lasagne](https://lasagne.readthedocs.io/en/latest/)
+      * [OpenAI Gym](https://gym.openai.com/)
       * Jupyter
