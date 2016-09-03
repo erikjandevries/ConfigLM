@@ -1,0 +1,10 @@
+[global]
+floatX = float32
+device = gpu0
+
+; To get an error if Theano cannot use cuDNN, use the following flag:
+optimizer_including=cudnn
+
+[nvcc]
+fastmath = True
+
