@@ -81,6 +81,10 @@ echo_warning () {
   echo -e "${color_red}${bg_black}${font_bold}$1${font_default}"
 }
 
+echo_warn () {
+  echo_warning "$1"
+}
+
 ensure_dir () {
   # Requires:
   # $1: directory path

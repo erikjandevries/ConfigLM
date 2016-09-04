@@ -44,6 +44,7 @@ ConfigLM_start 4_php php.sh
 # ConfigLM_start 4_php phpadmin.sh
 
 # ConfigLM_start 5_vmhost qemu.sh
+ConfigLM_start 5_vmhost xvfb.sh
 
 ConfigLM_start 6_mldev atom.sh
 ConfigLM_start 6_mldev python27.sh

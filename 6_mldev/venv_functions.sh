@@ -42,6 +42,9 @@ venv_ml () {
   echo_subsection "Installing ${color_green}PyAutoGUI${color_yellow} for controling the mouse and keyboard"
   pip install --upgrade pyautogui
 
+  echo_subsection "Installing ${color_green}PyVirtualDisplay${color_yellow} in the VirtualEnv"
+  pip install pyvirtualdisplay, pyscreenshot
+
   echo_subsection "Installing ${color_green}gprof2dot${color_yellow} for visualising profiler data"
   pip install --upgrade gprof2dot
 
