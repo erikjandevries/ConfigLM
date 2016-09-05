@@ -1,7 +1,7 @@
 echo_section "Installing OpenSSH Server"
 
-echo_subsection "Installing latest security stack"
-sudo apt-get install -y xserver-xorg-lts-xenial libwayland-egl1-mesa-lts-xenial libgl1-mesa-glx-lts-xenial:i386 libgl1-mesa-glx-lts-xenial
+# echo_subsection "Installing latest security stack"
+# sudo apt-get install -y xserver-xorg-lts-xenial libwayland-egl1-mesa-lts-xenial libgl1-mesa-glx-lts-xenial:i386 libgl1-mesa-glx-lts-xenial
 
 echo_subsection "Installing OpenSSH Server"
 sudo apt-get install -y openssh-server
