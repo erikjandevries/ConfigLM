@@ -35,6 +35,7 @@ ConfigLM_start 1_linux exFAT.sh
 ConfigLM_start 1_linux driver_WLAN.sh
 
 ConfigLM_start 2_www apache.sh
+ConfigLM_start 2_www nginx.sh
 ConfigLM_start 2_www openssh-server.sh
 
 ConfigLM_start 3_db mariadb.sh
