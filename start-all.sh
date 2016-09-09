@@ -47,8 +47,8 @@ ConfigLM_start 4_php php.sh
 ConfigLM_start 5_vmhost xvfb.sh
 
 ConfigLM_start 6_mldev atom.sh
-ConfigLM_start 6_mldev python27.sh
 ConfigLM_start 6_mldev rstudio.sh
+ConfigLM_start 6_mldev python27.sh
 
 cd 9_private_config
 source start-all.sh

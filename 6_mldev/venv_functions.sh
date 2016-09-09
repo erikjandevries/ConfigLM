@@ -84,6 +84,7 @@ venv_ml () {
 
   echo_subsection "Installing ${color_green}Jupyter${color_yellow} in the VirtualEnv"
   pip install --upgrade jupyter
+  R -e "IRkernel::installspec()"
 
   # source basemap.sh
 
