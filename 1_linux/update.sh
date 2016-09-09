@@ -6,6 +6,7 @@ sudo apt-get update
 
 echo_subsection "Upgrade all packages"
 sudo apt-get dist-upgrade -y
+# sudo apt-get dist-upgrade -y -o Dpkg::Options::="--force-confnew"
 
 echo_subsection "Fix broken packages"
 sudo apt-get -f install

@@ -28,10 +28,13 @@ done
 # Load some custom functions
 source ConfigLM_functions.sh
 
-INIT_SCRIPT=$CONFIGLM_FOLDER/9_private_config/ConfigLM_init.sh
-if [[ -e $INIT_SCRIPT ]]; then
-  if [ "$EXEC_INIT" = true ] ; then
-    source $INIT_SCRIPT
+if [ "$EXEC_INIT" = true ] ; then
+  if [[ -e 9_private_config/ConfigLM_init.sh ]]; then
+    source 9_private_config/ConfigLM_init.sh
+  else
+    if [[ -e $CONFIGLM_FOLDER/9_private_config/ConfigLM_init.sh ]]; then
+      source $CONFIGLM_FOLDER/9_private_config/ConfigLM_init.sh
+    fi
   fi
 fi
 
