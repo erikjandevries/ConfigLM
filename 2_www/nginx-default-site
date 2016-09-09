@@ -33,15 +33,15 @@ server {
     proxy_read_timeout 20d;
   }
 
-  location /shiny-admin/ {
-    rewrite ^/shiny-admin/(.*)$ /$1 break;
-    proxy_pass http://localhost:4151;
-    proxy_redirect http://localhost:4151/ $scheme://$host/shiny-admin/;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection $connection_upgrade;
-    proxy_read_timeout 20d;
-  }
+#  location /shiny-admin/ {
+#    rewrite ^/shiny-admin/(.*)$ /$1 break;
+#    proxy_pass http://localhost:4151;
+#    proxy_redirect http://localhost:4151/ $scheme://$host/shiny-admin/;
+#    proxy_http_version 1.1;
+#    proxy_set_header Upgrade $http_upgrade;
+#    proxy_set_header Connection $connection_upgrade;
+#    proxy_read_timeout 20d;
+#  }
 
   location ~ /\.ht {
     deny all;
