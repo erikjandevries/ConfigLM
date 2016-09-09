@@ -14,6 +14,6 @@ ensure_sl $DATA_ROOT/Software ~/Software
 ensure_sl $DATA_ROOT/VirtualEnvs ~/VirtualEnvs
 
 # echo_subsection "Git configuration"
-# sudo apt-get install -y git
+# ensure_pkg git
 # git config --global user.name "My Name"
 # git config --global user.email "my.email@host.com"

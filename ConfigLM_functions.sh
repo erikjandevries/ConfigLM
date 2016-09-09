@@ -173,3 +173,52 @@ ensure_conf () {
     grep -q -F "$1" $2 || echo "$1" | tee -a $2
   fi
 }
+
+replace_conf () {
+  # Requires
+  # $1: existing configuration line
+  # $2: replacement configuration line
+  # $3: configuration file
+
+  # Optional fourth argument:
+  # -sudo
+
+  USE_SUDO=false
+  if [ $# -gt 3 ]; then
+    if [ "$4" = "-sudo" ]; then
+      USE_SUDO=true
+    fi
+  fi
+
+  if [ $USE_SUDO = true ]; then
+    sudo sed -i "s/$1/$2/" $3
+  else
+    sed -i "s/$1/$2/" $3
+  fi
+}
+
+ensure_pkg () {
+  # Requires
+  # $@: packages to install
+
+  pkgmissing=
+
+  for i in "$@"
+  do
+    if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+      if [ "x$pkgmissing" != "x" ]; then
+        pkgmissing="$pkgmissing $i"
+      else
+        pkgmissing="$i"
+      fi
+    else
+      echo "$i is already installed"
+    fi
+  done
+
+  if [ "x$pkgmissing" != "x" ]; then
+    echo "Installing $pkgmissing"
+    sudo apt-get install -y $pkgmissing
+  fi
+}

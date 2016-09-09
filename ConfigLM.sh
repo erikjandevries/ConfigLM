@@ -35,24 +35,13 @@ if [[ -e $INIT_SCRIPT ]]; then
   fi
 fi
 
-echo_section "Updating Linux and upgrading installed packages"
-# See also: https://help.ubuntu.com/community/AptGet/Howto
-echo_subsection "Update the source list"
-sudo apt-get update
-echo_subsection "Upgrade all packages, checking dependencies, and using 'smart' conflict resolution"
-sudo apt-get dist-upgrade -y
-echo_subsection "Fix broken packages"
-sudo apt-get -f install
-echo_subsection "Remove files no longer needed by installed programs"
-sudo apt-get autoclean
-
 echo_section "Preparing for installation and configuration"
 ensure_dir $REPOS_FOLDER
 ensure_dir $REPOS_FOLDER/Clones
 ensure_dir $SOFTWARE_FOLDER
 
-echo_section "Installing Git and cloning the repository"
-sudo apt-get install -y git
+echo_section "Making sure Git is installed and cloning the repository"
+ensure_pkg git
 if [ "$USE_SSH" = true ] ; then
   ensure_git_clone git@github.com:erikjandevries/ConfigLM.git $CONFIGLM_FOLDER
 else

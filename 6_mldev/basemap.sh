@@ -3,6 +3,8 @@ echo_section "Installing the basemap extension to the matplotlib library"
 ensure_dir $SOFTWARE_FOLDER/Basemap
 if [[ ! -e "$SOFTWARE_FOLDER/Basemap/basemap-1.0.7.tar.gz" ]]; then
   wget -O $SOFTWARE_FOLDER/Basemap/basemap-1.0.7.tar.gz http://sourceforge.net/projects/matplotlib/files/matplotlib-toolkits/basemap-1.0.7/basemap-1.0.7.tar.gz
+else
+  echo "Basemap package archive has already been downloaded"
 fi
 
 tar -xzf $SOFTWARE_FOLDER/Basemap/basemap-1.0.7.tar.gz

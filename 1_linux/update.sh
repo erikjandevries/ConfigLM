@@ -4,7 +4,7 @@ echo_section "Update Linux and upgrade installed packages"
 echo_subsection "Update the source list"
 sudo apt-get update
 
-echo_subsection "Upgrade all packages, using 'smart' conflict resolution"
+echo_subsection "Upgrade all packages"
 sudo apt-get dist-upgrade -y
 
 echo_subsection "Fix broken packages"

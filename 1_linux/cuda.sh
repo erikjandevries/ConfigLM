@@ -1,4 +1,4 @@
-echo_section "Installing nVidia CUDA"
+echo_section "Installing nVidia CUDA 7.5 and cuDNN 5.0"
 
 CUDA_DEB_PACKAGE=$SOFTWARE_FOLDER/CUDA/cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 
@@ -8,12 +8,12 @@ if [[ -e $CUDA_DEB_PACKAGE ]]; then
   sudo apt-get update
 
   echo_subsection "Installing nVidia drivers 352.39 from .deb package"
-  sudo apt-get install -y nvidia-352=352.39-0ubuntu1 nvidia-settings=352.39-0ubuntu1
+  ensure_pkg nvidia-352=352.39-0ubuntu1 nvidia-settings=352.39-0ubuntu1
 
   sudo nvidia-xconfig
 
   echo_subsection "Installing nVidia CUDA"
-  sudo apt-get install -y cuda
+  ensure_pkg cuda
 
   ensure_conf "export CUDA_ROOT=/usr/local/cuda-7.5" ~/.bashrc
   ensure_conf "export PATH=\${CUDA_ROOT}/bin:\${PATH}" ~/.bashrc
