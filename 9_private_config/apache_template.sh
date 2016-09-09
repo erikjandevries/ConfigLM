@@ -9,7 +9,7 @@ sudo grep -q -F "$MYFQDN" /etc/hosts || sudo sed -i "s/127.0.0.1\tlocalhost/127.
 # sudo sed -i "s/::1     ip6-localhost ip6-loopback/::1     ip6-localhost ip6-loopback $MYFQDN/" /etc/hosts
 
 ensure_conf "ServerName $MYFQDN" /etc/apache2/apache2.conf -sudo
-replace_conf "Listen 80\n" "Listen 127.0.0.1:$WWW_PORT\n" /etc/apache2/ports.conf -sudo
-replace_conf "<VirtualHost \*:80>" "<VirtualHost 127.0.0.1:$WWW_PORT>" /etc/apache2/sites-enabled/000-default.conf -sudo
+replace_conf "Listen 80\n" "Listen $WWW_PORT\n" /etc/apache2/ports.conf -sudo
+replace_conf "<VirtualHost \*:80>" "<VirtualHost \*:$WWW_PORT>" /etc/apache2/sites-available/000-default.conf -sudo
 
 sudo service apache2 restart
