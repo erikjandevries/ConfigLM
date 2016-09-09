@@ -11,3 +11,4 @@ These tasks have not been automated:
   * Show hidden files
 4. Firefox
   * Set the default search engine
+  * Set "Always ask me where to save files"
