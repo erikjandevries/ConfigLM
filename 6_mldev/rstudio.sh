@@ -17,6 +17,8 @@ sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com
 sudo su - -c "R -e \"install.packages('rmarkdown', repos='http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
 
+sudo su - -c "R -e \"install.packages('ggplot2', repos='https://cran.rstudio.com/')\""
+
 echo_subsection "Downloading RStudio Server"
 ensure_dir $SOFTWARE_FOLDER/RStudio
 if [[ ! -e $SOFTWARE_FOLDER/RStudio/rstudio-server-0.99.903-amd64.deb ]]; then
