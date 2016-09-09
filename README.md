@@ -30,10 +30,12 @@ execute the following code block:
 
     wget -qO- https://raw.githubusercontent.com/erikjandevries/ConfigLM/master/ConfigLM.sh > ConfigLM.sh
     wget -qO- https://raw.githubusercontent.com/erikjandevries/ConfigLM/master/ConfigLM_functions.sh > ConfigLM_functions.sh
-    . ConfigLM.sh
+    . ConfigLM.sh -ssh
 
 This script installs git and clones this repository into a subfolder of
-~/Repositories/Clones. (If an existing clone is found, the script will pull the latest version of the repository.)
+~/Repositories/Clones. (If an existing clone is found, the script will pull the
+latest version of the repository.)
+If you have not configured your ssh key yet, do not use the `-ssh` argument.
 
 Optional parameters for `ConfigLM.sh`:
 
