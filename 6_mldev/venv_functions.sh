@@ -86,6 +86,9 @@ venv_ml () {
   pip install --upgrade jupyter
   R -e "IRkernel::installspec()"
 
+  echo_subsection "Installing ${color_green}Django${color_yellow} in the VirtualEnv"
+  pip install --upgrade django
+
   # source basemap.sh
 
   echo_subsection "Pip list inside the VirtualEnv"

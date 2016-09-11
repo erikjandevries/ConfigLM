@@ -4,4 +4,4 @@ env
 basemap-?.?.?/
 
 9_private_config/*
-!9_private_config/*_template.sh
+!9_private_config/*_template*.*
