@@ -1,9 +1,5 @@
 # https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-for-apache
 # https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-web-server-and-reverse-proxy-for-apache-on-one-ubuntu-14-04-droplet
-
-# Django configuration
-# http://thecodeship.com/deployment/deploy-django-apache-virtualenv-and-mod_wsgi/
-
 echo_subsection "Private Apache configuration"
 
 MYFQDN="my.domain.com"
