@@ -4,6 +4,19 @@ map $http_upgrade $connection_upgrade {
 }
 server {
   listen 80;
+  listen [::]:80;
+  # server_name server_domain_or_IP;
+  return 302 https://$server_name$request_uri;
+}
+
+server {
+  # SSL configuration
+  listen 443 ssl;
+  listen [::]:443 ssl;
+
+  server_name your_domain.com;
+  ssl_certificate /etc/nginx/ssl/nginx.crt;
+  ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
   location / {
     proxy_pass http://localhost:8080;

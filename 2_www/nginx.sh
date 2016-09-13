@@ -9,4 +9,12 @@ sudo cp $CONFIGLM_FOLDER/2_www/nginx-default-site /etc/nginx/sites-available/def
 sudo rm /etc/nginx/sites-enabled/default
 ensure_sl /etc/nginx/sites-available/default-ConfigLM /etc/nginx/sites-enabled/default
 
+ensure_dir /etc/nginx/ssl -sudo
+if [[ ! -e /etc/nginx/ssl/nginx.key ]]; then
+  sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+    -subj "/CN=localhost" \
+    -keyout /etc/nginx/ssl/nginx.key \
+    -out /etc/nginx/ssl/nginx.crt
+fi
+
 sudo service nginx restart
