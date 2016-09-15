@@ -7,8 +7,7 @@ else
   echo "Atom package has already been downloaded"
 fi
 
-if [ $(dpkg-query -W -f='${Status}' atom 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
+if [ $(dpkg-query -W -f='${Status}' atom 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   sudo dpkg -i $SOFTWARE_FOLDER/Atom/atom-amd64.deb
 
   apm install atom-alignment
@@ -21,5 +20,5 @@ then
 
   apm upgrade --no-confirm
 else
-  echo "atom is already installed"
+  echo "Atom has already been installed"
 fi

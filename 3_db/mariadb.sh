@@ -1,9 +1,8 @@
-echo_section "Installing MariaDB"
-
+echo_section "Installing MariaDB Client"
 ensure_pkg mariadb-client
 
-if [ $(dpkg-query -W -f='${Status}' mariadb-server 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
+echo_section "Installing MariaDB Server"
+if [ $(dpkg-query -W -f='${Status}' mariadb-server 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   sudo debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_password password $mariadb_root_password"
   sudo debconf-set-selections <<< "maria-db-$MARIADB_VERSION mysql-server/root_password_again password $mariadb_root_password"
 
@@ -19,5 +18,5 @@ then
   sudo chmod 755 /usr/bin/mysql_secure_installation_automated
   sudo mysql_secure_installation_automated $mariadb_root_password
 else
-  echo "mariadb-server is already installed";
+  echo_info "MariaDB Server is already installed";
 fi

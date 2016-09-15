@@ -65,7 +65,7 @@ echo_section () {
   line=${tmp:1:$length}
   echo -e "${color_yellow}${bg_black}${font_bold}  $line  ${font_default}"
   echo -e "${color_yellow}${bg_black}${font_bold}  $1  ${font_default}"
-  echo -e "${color_yellow}${bg_black}${font_bold}  ${line}  ${font_default}"
+  echo -e "${color_yellow}${bg_black}${font_bold}  $line  ${font_default}"
 }
 
 echo_subsection () {
@@ -83,6 +83,12 @@ echo_warning () {
 
 echo_warn () {
   echo_warning "$1"
+}
+
+echo_info () {
+  # Requires
+  # $1: warning message
+  echo -e "${color_light_blue}$1${font_default}"
 }
 
 ensure_dir () {
@@ -213,12 +219,12 @@ ensure_pkg () {
         pkgmissing="$i"
       fi
     else
-      echo "$i is already installed"
+      echo_info "$i is already installed"
     fi
   done
 
   if [ "x$pkgmissing" != "x" ]; then
-    echo "Installing $pkgmissing"
+    echo_info "Installing $pkgmissing"
     sudo apt-get install -y $pkgmissing
   fi
 }

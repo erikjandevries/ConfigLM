@@ -84,6 +84,8 @@ The scripts will perform the following installation and configuration:
 
 ### WWW
 
+* Nginx web-server
+  * with reverse proxy and SSL
 * Apache web-server
 * OpenSSH Server
 

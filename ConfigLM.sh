@@ -51,10 +51,8 @@ else
   ensure_git_clone https://github.com/erikjandevries/ConfigLM.git $CONFIGLM_FOLDER
 fi
 
-cd $CONFIGLM_FOLDER
-
 if [ "$START_ALL" = true ] ; then
-  source start-all.sh
+  source $CONFIGLM_FOLDER/start-all.sh
 fi
 
-source ConfigLM_cleanup.sh
+source $CONFIGLM_FOLDER/ConfigLM_cleanup.sh
