@@ -22,6 +22,8 @@ if [[ ! -e $REPOS_FOLDER/Clones/mxnet/lib/libmxnet.so ]]; then
   else
     echo_info "CUDA found, compiling with CUDA support"
     replace_conf "USE_CUDA = 0" "USE_CUDA = 1" $REPOS_FOLDER/Clones/mxnet/config.mk -sudo
+    replace_conf "USE_CUDA_PATH = NONE" "USE_CUDA_PATH = $CUDA_ROOT" $REPOS_FOLDER/Clones/mxnet/config.mk -sudo
+
     if [[ -e $CUDA_ROOT/lib64/libcudnn.so ]]; then
       echo_info "cuDNN found, compiling with cuDNN support"
       replace_conf "USE_CUDNN = 0" "USE_CUDNN = 1" $REPOS_FOLDER/Clones/mxnet/config.mk -sudo
