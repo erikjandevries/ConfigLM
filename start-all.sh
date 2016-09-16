@@ -14,12 +14,12 @@ ensure_conf 'source ~/.bash_functions/ConfigLM_functions.sh' ~/.bashrc
 ensure_dir 9_private_config
 
 ConfigLM_start () {
-  if [[ -d $1 ]]; then
-    if [[ -e $1/$2 ]]; then
-      source $1/$2
+  if [[ -d $CONFIGLM_FOLDER/$1 ]]; then
+    if [[ -e $CONFIGLM_FOLDER/$1/$2 ]]; then
+      source $CONFIGLM_FOLDER/$1/$2
     fi
-    if [[ -e 9_private_config/$2 ]]; then
-      source 9_private_config/$2
+    if [[ -e $CONFIGLM_FOLDER/9_private_config/$2 ]]; then
+      source $CONFIGLM_FOLDER/9_private_config/$2
     fi
   fi
 }
@@ -53,6 +53,6 @@ ConfigLM_start 6_mldev rstudio.sh
 ConfigLM_start 6_mldev python27.sh
 # ConfigLM_start 6_mldev mxnet.sh
 
-if [[ -e 9_private_config/private.sh ]]; then
-  source 9_private_config/private.sh
+if [[ -e $CONFIGLM_FOLDER/9_private_config/private.sh ]]; then
+  source $CONFIGLM_FOLDER/9_private_config/private.sh
 fi

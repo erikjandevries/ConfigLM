@@ -72,7 +72,7 @@ echo_subsection () {
   # Requires
   # $1: subsection header
   echo -e ""
-  echo -e "${color_yellow}${font_bold}$1${font_default}"
+  echo -e "${color_orange}${font_bold}$1${font_default}"
 }
 
 echo_warning () {

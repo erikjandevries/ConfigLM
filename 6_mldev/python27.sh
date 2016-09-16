@@ -18,10 +18,10 @@ sudo -H pip install --upgrade pyopenssl ndg-httpsclient pyasn1
 
 if [ $(dpkg-query -W -f='${Status}' cuda 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
   echo_subsection "CUDA not found - Creating configuration file for Theano to use the CPU"
-  . config_Theano_for cpu
+  source $CONFIGLM_FOLDER/6_mldev/config_Theano_for cpu
 else
   echo_subsection "CUDA found - Creating configuration file for Theano to use the GPU"
-  . config_Theano_for gpu
+  source $CONFIGLM_FOLDER/6_mldev/config_Theano_for gpu
 fi
 
-source virtualenv.sh
+source $CONFIGLM_FOLDER/6_mldev/virtualenv.sh
