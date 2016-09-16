@@ -10,3 +10,5 @@ else
   echo_warn "R Package has already been compiled"
 fi
 sudo R CMD INSTALL $REPOS_FOLDER/Clones/mxnet/mxnet_0.7.tar.gz
+
+cd $CONFIGLM_FOLDER

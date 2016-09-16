@@ -38,3 +38,5 @@ if [[ ! -e $REPOS_FOLDER/Clones/mxnet/lib/libmxnet.so ]]; then
 else
   echo_warn "MXNet library has already been compiled"
 fi
+
+cd $CONFIGLM_FOLDER
