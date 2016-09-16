@@ -89,7 +89,7 @@ venv_ml () {
   echo_subsection "Installing ${color_green}Django${color_yellow} in the VirtualEnv"
   pip install --upgrade django
 
-  # source basemap.sh
+  source $CONFIGLM_FOLDER/6_mldev/basemap.sh
 
   echo_subsection "Pip list inside the VirtualEnv"
   pip list
