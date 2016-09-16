@@ -17,6 +17,7 @@ if [ $(dpkg-query -W -f='${Status}' r-base 2>/dev/null | grep -c "ok installed")
   sudo su - -c "R -e \"install.packages('rmarkdown', repos='http://cran.rstudio.com/')\""
   sudo su - -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
 
+  sudo su - -c "R -e \"install.packages('dplyr', repos='https://cran.rstudio.com/')\""
   sudo su - -c "R -e \"install.packages('ggplot2', repos='https://cran.rstudio.com/')\""
 
   echo_subsection "Installing ${color_green}R kernel for Jupyter${color_yellow}"
