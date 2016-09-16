@@ -91,6 +91,9 @@ venv_ml () {
 
   source $CONFIGLM_FOLDER/6_mldev/basemap.sh
 
+  echo_subsection "Installing ${color_green}MXNet${color_yellow} in the VirtualEnv"
+  pip install --upgrade -e $REPOS_FOLDER/Clones/mxnet/python/
+
   echo_subsection "Pip list inside the VirtualEnv"
   pip list
 }
