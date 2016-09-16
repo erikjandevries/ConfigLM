@@ -19,10 +19,7 @@ if [ $(dpkg-query -W -f='${Status}' cuda 2>/dev/null | grep -c "ok installed") -
     ensure_conf "export CUDA_ROOT=/usr/local/cuda-7.5" ~/.bashrc
     ensure_conf "export PATH=\${CUDA_ROOT}/bin:\${PATH}" ~/.bashrc
     ensure_conf "export LD_LIBRARY_PATH=\${CUDA_ROOT}/lib64:\${LD_LIBRARY_PATH}" ~/.bashrc
-
-    export CUDA_ROOT=/usr/local/cuda-7.5
-    export PATH=${CUDA_ROOT}/bin:${PATH}
-    export LD_LIBRARY_PATH=${CUDA_ROOT}/lib64:${LD_LIBRARY_PATH}
+    source ~/.bashrc
 
     CUDNN_FOLDER=$SOFTWARE_FOLDER/cuDNN/cudnn-7.5-linux-x64-v5.0-ga
     if [[ -d $CUDNN_FOLDER ]]; then
