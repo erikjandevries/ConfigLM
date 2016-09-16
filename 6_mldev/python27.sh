@@ -16,7 +16,12 @@ sudo easy_install -U pip
 echo_subsection "Configuring SSL for pip"
 sudo -H pip install --upgrade pyopenssl ndg-httpsclient pyasn1
 
-echo_subsection "Creating configuration file for Theano to use the CPU"
-. config_Theano_for cpu
+if [ $(dpkg-query -W -f='${Status}' cuda 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
+  echo_subsection "CUDA not found - Creating configuration file for Theano to use the CPU"
+  . config_Theano_for cpu
+else
+  echo_subsection "CUDA found - Creating configuration file for Theano to use the GPU"
+  . config_Theano_for gpu
+fi
 
 source virtualenv.sh
