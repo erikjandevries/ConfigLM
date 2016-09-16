@@ -53,4 +53,6 @@ ConfigLM_start 6_mldev rstudio.sh
 ConfigLM_start 6_mldev python27.sh
 # ConfigLM_start 6_mldev mxnet.sh
 
-# source 9_private_config/start-all.sh
+if [[ -e 9_private_config/private.sh ]]; then
+  source 9_private_config/private.sh
+fi
