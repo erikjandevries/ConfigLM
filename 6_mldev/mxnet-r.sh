@@ -1,6 +1,10 @@
 echo_section "Installing MXNet R Package"
 # sudo rm -rf $REPOS_FOLDER/Clones/mxnet/mxnet_0.7.tar.gz
 if [[ ! -e $REPOS_FOLDER/Clones/mxnet/mxnet_0.7.tar.gz ]]; then
+
+  # CAN WE DO THE FOLLOWING AS SUPER USER,
+  # SO THAT DEPENDENCIES ARE INSTALLED IN ROOT SITE LIBRARY?
+
   echo_info "Compiling MXNet R Package"
   cd $REPOS_FOLDER/Clones/mxnet/R-package
   Rscript -e "library(devtools); library(methods); options(repos=c(CRAN='https://cran.rstudio.com')); install_deps(dependencies = TRUE)"
