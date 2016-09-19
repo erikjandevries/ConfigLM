@@ -25,6 +25,10 @@ if [ $(dpkg-query -W -f='${Status}' cuda 2>/dev/null | grep -c "ok installed") -
     ensure_conf "export PATH=\${CUDA_ROOT}/bin:\${PATH}" /root/.bashrc -sudo
     ensure_conf "export LD_LIBRARY_PATH=\${CUDA_ROOT}/lib64:\${LD_LIBRARY_PATH}" /root/.bashrc -sudo
 
+    sudo touch /usr/lib/R/etc/ldpaths
+    ensure_conf "export CUDA_ROOT=/usr/local/cuda-7.5" /usr/lib/R/etc/ldpaths -sudo
+    ensure_conf "export LD_LIBRARY_PATH=\${CUDA_ROOT}/lib64:\${LD_LIBRARY_PATH}" /usr/lib/R/etc/ldpaths -sudo
+
     source ~/.bashrc
 
     CUDNN_FOLDER=$SOFTWARE_FOLDER/cuDNN/cudnn-7.5-linux-x64-v5.0-ga
