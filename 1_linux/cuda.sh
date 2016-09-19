@@ -25,6 +25,7 @@ if [ $(dpkg-query -W -f='${Status}' cuda 2>/dev/null | grep -c "ok installed") -
     ensure_conf "export PATH=\${CUDA_ROOT}/bin:\${PATH}" /root/.bashrc -sudo
     ensure_conf "export LD_LIBRARY_PATH=\${CUDA_ROOT}/lib64:\${LD_LIBRARY_PATH}" /root/.bashrc -sudo
 
+    # To enable CUDA support for MXNet in RStudio Server
     sudo touch /usr/lib/R/etc/ldpaths
     ensure_conf "export CUDA_ROOT=/usr/local/cuda-7.5" /usr/lib/R/etc/ldpaths -sudo
     ensure_conf "export LD_LIBRARY_PATH=\${CUDA_ROOT}/lib64:\${LD_LIBRARY_PATH}" /usr/lib/R/etc/ldpaths -sudo
