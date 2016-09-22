@@ -14,6 +14,7 @@ if [ $(dpkg-query -W -f='${Status}' r-base 2>/dev/null | grep -c "ok installed")
 
   echo_subsection "Installing R packages"
   sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
+  sudo su - -c "R -e \"install.packages('logging', repos='http://cran.rstudio.com/')\""
   sudo su - -c "R -e \"install.packages('rmarkdown', repos='http://cran.rstudio.com/')\""
   sudo su - -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
 
