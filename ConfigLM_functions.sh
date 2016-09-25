@@ -228,3 +228,18 @@ ensure_pkg () {
     sudo apt-get install -y $pkgmissing
   fi
 }
+
+
+git_pull () {
+  while read data; do
+    echo_subsection "$data"
+    git -C $data config --get remote.origin.url
+    git -C $data pull
+  done
+}
+
+git_pull_recursively () {
+  # Finds subfolders that are git repositories,
+  # and pulls the latest updates, using the git_pull function above.
+  find . -name ".git" -type d | sed 's/\/.git//' | git_pull
+}
