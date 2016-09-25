@@ -7,7 +7,7 @@ fi
 
 echo_section "Adding ConfigLM common functions to .bashrc"
 ensure_dir ~/.bash_functions
-cp ConfigLM_functions.sh ~/.bash_functions
+cp $CONFIGLM_FOLDER/ConfigLM_functions.sh ~/.bash_functions
 ensure_conf 'source ~/.bash_functions/ConfigLM_functions.sh' ~/.bashrc
 
 
