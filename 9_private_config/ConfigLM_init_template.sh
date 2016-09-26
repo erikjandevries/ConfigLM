@@ -20,7 +20,8 @@ ensure_sl $DATA_ROOT/VirtualEnvs ~/VirtualEnvs
 
 ensure_sl $DATA_ROOT/home/$USER/R ~/R
 
-# echo_subsection "Git configuration"
-# ensure_pkg git
+echo_subsection "Git configuration"
+ensure_pkg git
 # git config --global user.name "My Name"
 # git config --global user.email "my.email@host.com"
+git config --global push.default simple
