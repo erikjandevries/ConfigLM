@@ -31,6 +31,8 @@ ConfigLM_start 1_linux update.sh
 ConfigLM_start 1_linux cuda.sh
 ConfigLM_start 1_linux fonts.sh
 
+ConfigLM_start 1_linux xvfb.sh
+
 # Exclude the following lines for Linux Mint 18
 ConfigLM_start 1_linux exFAT.sh
 ConfigLM_start 1_linux driver_WLAN.sh
@@ -46,7 +48,6 @@ ConfigLM_start 4_php php.sh
 # ConfigLM_start 4_php phpadmin.sh
 
 ConfigLM_start 5_vmhost qemu.sh
-ConfigLM_start 5_vmhost xvfb.sh
 
 ConfigLM_start 6_mldev atom.sh
 ConfigLM_start 6_mldev rstudio.sh

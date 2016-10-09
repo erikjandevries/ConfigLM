@@ -45,6 +45,9 @@ venv_ml () {
   echo_subsection "Installing ${color_green}PyVirtualDisplay${color_yellow} in the VirtualEnv"
   pip install pyvirtualdisplay pyscreenshot
 
+  echo_subsection "Installing ${color_green}SubProcess32${color_yellow} in the VirtualEnv"
+  pip install subprocess32
+
   echo_subsection "Installing ${color_green}gprof2dot${color_yellow} for visualising profiler data"
   pip install --upgrade gprof2dot
 
