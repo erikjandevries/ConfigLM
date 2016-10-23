@@ -12,8 +12,8 @@ if [[ ! -e /etc/nginx/ssl/nginx.key ]]; then
       -keyout /etc/nginx/ssl/nginx.key \
       -out /etc/nginx/ssl/nginx.crt
   fi
-  cp ~/.ssh/nginx.key /etc/nginx/ssl/nginx.key
-  cp ~/.ssh/nginx.crt /etc/nginx/ssl/nginx.crt
+  sudo cp ~/.ssh/nginx.key /etc/nginx/ssl/nginx.key
+  sudo cp ~/.ssh/nginx.crt /etc/nginx/ssl/nginx.crt
 fi
 
 # ensure_dir /usr/share/ca-certificates/ConfigLM -sudo
